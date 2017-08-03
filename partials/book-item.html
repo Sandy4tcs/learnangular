@@ -1,0 +1,7 @@
+<img class="artist-img" 
+  src="{{book.volumeInfo.imageLinks.smallThumbnail}}"
+  alt="{{book.volumeInfo.title}} photo">
+<div class="artist-info">
+  <h2 class="artist-name">{{ book.volumeInfo.title }}</h2>
+  <h3 class="artist-reknown">{{book.volumeInfo.publisher}}, {{book.volumeInfo.publishedDate | date}}</h3>
+</div>

@@ -1,0 +1,8 @@
+<section class="card artist-details">
+    <h1 class="artist-name">{{book.volumeInfo.title}}</h1>
+    <div class="info">
+      <h3 class="artist-reknown">{{book.volumeInfo.publisher}}, {{book.volumeInfo.publishedDate | date}}</h3>
+      <img class="artist-img" src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="{{book.volumeInfo.title}}">
+      <div class="artist-longbio">{{book.volumeInfo.description}}</div>
+    </div><!--info-->
+</section><!--artistdetails-->

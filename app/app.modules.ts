@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
+import { BookDataService } from './service.book-data'
 import { AppComponent } from './component.app';
-import { ArtistItemComponent } from './component.artist-item';
-import { ArtistDetailsComponent } from './component.artist-details';
+import { BookItemComponent } from './component.book-item';
+import { BookDetailsComponent } from './component.book-details';
 
 import { SearchPipe } from './pipe.search';
 
 @NgModule({
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpModule
   ],
   declarations: [
-    AppComponent, ArtistItemComponent, ArtistDetailsComponent, SearchPipe
+    AppComponent, BookItemComponent, BookDetailsComponent, SearchPipe
   ],
+  providers: [ BookDataService ],
   bootstrap: [
     AppComponent
   ]

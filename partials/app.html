@@ -1,21 +1,13 @@
 <div class="card search">
-  <h1 class="search-headline">Artist Directory</h1>
-  <label class="search-label">search
-    <span *ngIf="query"
-      [innerHTML]="' for: ' + query"></span></label>
-    <input class="search-input"
-      [(ngModel)]="query" placeholder="type in search term here">
+  <h1 class="search-headline">Book Directory</h1>
+  <label class="search-label">search</label>
+    <input class="search-input" #search (keyup.enter)="searchBook(search.value);" placeholder="eg: {{initialQuery}}">
 </div><!-- card search -->
 
-<ul class="artistlist cf"
-  *ngIf="query">
+<ul class="artistlist cf" *ngIf="searchList">
   <li class="artistlist-item cf"
-    (click)="showArtist(item); query=''"
-    *ngFor="let item of (artists | search: query)">
-    <artist-item class="content" [artist]=item></artist-item>
+    *ngFor="let book of searchList.items">
+    <book-item class="content" [book]=book></book-item>
   </li>
 </ul>
-
-<artist-details 
-  *ngIf="currentArtist"
-  [artist]="currentArtist"></artist-details>
+<div><book-details *ngFor="let book of bookList" [book]=book></book-details></div>
